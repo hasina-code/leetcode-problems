@@ -14,25 +14,19 @@ function createLinkedList(arr) {
     return dummy.next;
 }
 
-function printLinkedList(head) {
+
+function printLinkedList(head, label) {
     let result = [];
     while (head !== null) {
         result.push(head.val);
         head = head.next;
     }
-    console.log("While Loop Output:", result);
-       console.log("For Loop Output:", result);
+    console.log(label, result);
 }
 
+// =====  1.  while loop  =====
 
-
-
-//  ===== while loop=====
-
-
-
-
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbersWhile = function(l1, l2) {
     let dummyHead = new ListNode(0); 
     let current = dummyHead;
     let carry = 0;
@@ -53,17 +47,9 @@ var addTwoNumbers = function(l1, l2) {
     return dummyHead.next;
 };
 
+// =====  2.  for loop  =====
 
-
-
-
-
-
-// ===== for loop =======
-
-
-
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbersFor = function(l1, l2) {
     let dummyHead = new ListNode(0);
     let current = dummyHead;
     let carry = 0;
@@ -78,12 +64,9 @@ var addTwoNumbers = function(l1, l2) {
 };
 
 
-
-
 let l1 = createLinkedList([2, 4, 3]);
 let l2 = createLinkedList([5, 6, 4]);
-printLinkedList(addTwoNumbers(l1, l2));
 
 
-
-
+printLinkedList(addTwoNumbersWhile(l1, l2), "While Loop Output:");
+printLinkedList(addTwoNumbersFor(l1, l2), "For Loop Output:");
